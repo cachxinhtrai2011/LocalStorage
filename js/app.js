@@ -8,16 +8,16 @@ function saveNewStudent(){
     }
     else studentList = JSON.parse(jsonData);
     var newStudent = {
-        FirstName: '',
-        LastName: '',
-        Year: ''
+        FirstName: document.getElementById("firstName").value,
+        LastName: document.getElementById("lastName").value,
+        Year: document.getElementById("year").value
     };
     studentList.push(newStudent);
     jsonData = JSON.stringify(studentList);
     localStorage.studentList = jsonData;
 }
 
-buttonSaveNew.addEventListener("click", saveNewStudent())
+buttonSaveNew.addEventListener("click", saveNewStudent)
 //   // read localStorage
 //   var jsonData =     localStorage.studentList;
 //   var studentList = null;
