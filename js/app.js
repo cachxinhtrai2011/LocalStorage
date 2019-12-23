@@ -1,12 +1,14 @@
 var buttonSaveNew = document.getElementById("save");
 
 function saveNewStudent(){
-     var jsonData =  localStorage.studentList;
+    var jsonData =  localStorage.studentList;
     var studentList = null;
-    if(jsonData == null){
+    
+    if(jsonData == null)
         studentList = [];
-    }
-    else studentList = JSON.parse(jsonData);
+    else 
+        studentList = JSON.parse(jsonData);
+
     var newStudent = {
         FirstName: document.getElementById("firstName").value,
         LastName: document.getElementById("lastName").value,
@@ -17,7 +19,12 @@ function saveNewStudent(){
     localStorage.studentList = jsonData;
 }
 
-buttonSaveNew.addEventListener("click", saveNewStudent)
+let result = saveNewStudent();
+buttonSaveNew.addEventListener("click", saveNewStudent);
+
+
+
+
 //   // read localStorage
 //   var jsonData =     localStorage.studentList;
 //   var studentList = null;
